@@ -1,0 +1,199 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    /* 告诉父盒子你是弹性盒 */
+    /* 旧的 */
+    /* 谷歌内核---用到谷歌内核的浏览器有-QQ浏览器，360浏览器，UC浏览器，chrome */
+    display: -webkit-box;
+    /* 火狐浏览器内核 */
+    display: -moz-box;
+    /* IE浏览器内核 */
+    display: -ms-flexbox;
+    /* 你的方向是垂直的还是水平的 */
+    /* 垂直 */
+    -webkit-box-orient: vertical;
+    /* 水平 */
+    /* -webkit-box-orient: horizontal; */
+    background: url(../img/login/bg.png) no-repeat;
+    background-size: 100%;
+}
+
+.box-section {
+    /* 占用剩余比例 */
+    -webkit-box-flex: 1;
+    /* 把中间变成弹性盒 */
+    /* display: -webkit-box; */
+    /* 垂直 */
+    /* -webkit-box-orient: vertical; */
+    overflow-y: auto;
+}
+
+/* 登录页面开始 */
+.box-section-head {
+    width: 100%;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    text-align: center;
+    position: relative;
+}
+
+/* 注册登录头 */
+.box-section-head-a {
+    display: inline-block;
+    width: 0.7rem;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    font-size: 0.18rem;
+    background: url(../img/login/login-btn-bg.png) no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;
+    top: 0.04rem;
+    color: #333;
+}
+
+/* logo图 */
+.box-section-head-img {
+    width: 0.53rem;
+    height: 0.26rem;
+    margin-top: 0.12rem;
+}
+
+.box-section-two {
+    width: 100%;
+    text-align: center;
+}
+
+/* 页面中间图片 */
+.box-section-two>img {
+    width: 2.37rem;
+    height: 1.79rem;
+    margin-top: 0.53rem;
+}
+
+/* 输入框 */
+.box-section-group-all {
+    padding: 0 0.2rem;
+    box-sizing: border-box;
+}
+
+.box-section-group-input {
+    width: 100%;
+    height: 0.46rem;
+    line-height: 0.46rem;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-section-group-input>input {
+    border: none;
+    outline: none;
+    padding-left: 0.14rem;
+    box-sizing: border-box;
+    font-size: 0.12rem;
+}
+
+/* 忘记密码 */
+.box-section-forget {
+    color: #30D3AC;
+    font-size: 0.12rem;
+    margin-top: 0.08rem;
+}
+
+/* 登录按钮 */
+.text-center-btn {
+    width: 3.35rem;
+    height: 0.48rem;
+    background: rgba(229, 229, 229, 1);
+    box-shadow: 0px 7px 21px 0px rgba(216, 216, 216, 0.48);
+    border-radius: 0.08rem;
+    font-size: 0.18rem;
+    color: #666;
+    margin: 0.26rem 0 0.36rem;
+    border: none;
+    outline: none;
+}
+
+/* 友情链接 */
+.box-section-link {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: 0.12rem;
+    color: #999;
+    margin-top: 0.1rem;
+}
+
+.box-section-link-group>a {
+    display: inline-block;
+    width: 0.48rem;
+    height: 0.48rem;
+}
+
+.box-section-link-group>a>img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 要添加的类 */
+.btn-active {
+    background: #30D3AC !important;
+    color: white !important;
+}
+
+.input-active-border {
+    border-bottom: 1px solid #30D3AC !important;
+}
+
+/* 登录页面结束 */
+/* 注册页面 */
+.box-section-headimg {
+    width: 100%;
+    text-align: center;
+}
+
+.box-section-headimg>img {
+    width: 1.23rem;
+    height: 1.23rem;
+}
+.box-section-inform{
+    font-size: 0.18rem;
+    font-weight: 500;
+    color: #333;
+    padding-left: 0.32rem;
+    box-sizing: border-box;
+}
+.box-section-btn-no-agree{
+    display: inline-block;
+    width: 0.22rem;
+    height: 0.22rem;
+    background: url(../img/login/login-no-agree.png);
+    background-size: 100% 100%;
+    vertical-align: middle;
+}
+.box-section-btn-agree{
+    display: inline-block;
+    width: 0.22rem;
+    height: 0.22rem;
+    background: url(../img/login/login-agree.png);
+    background-size: 100% 100%;
+    vertical-align: middle;
+}
+/**/
+.box-section-group-input{
+    position: relative;
+}
+.box-section-group-input>span{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: red;
+    font-size: 0.12rem;
+    display: none;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+    <!-- 引入一个移动端jq -->
+    <script src="js/zepto.min.js"></script>
+    <!-- 内容自适应 -->
+    <script src="js/font-auto.js"></script>
+    <link rel="stylesheet" href="css/gon.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <!-- 父盒子 -->
+    <div class="box">
+        <!-- <header class="box-header"></header> -->
+        <section class="box-section">
+            <div class="box-section-head">
+                <a class="box-section-head-a" href="#">登录</a>
+                <img class="box-section-head-img" src="img/login/login-logo.png" alt="">
+            </div>
+            <!-- 图片 -->
+            <div class="box-section-headimg">
+                <img src="img/login/login-headimg.png" alt="">
+            </div>
+            <!-- 登录注册框 -->
+            <div class="box-section-group-all">
+                <div class="box-section-group-input">
+                    <img src="img/login/login-name.png" alt="昵称" class="w22 h22 top6 ml10">
+                    <input type="text" name="昵称" id="" placeholder="昵称"  class="nicheng">
+                    <span></span>
+                </div>
+                <div class="box-section-group-input mt30">
+                    <img src="img/login/login-email.png" alt="邮箱位置" class="w22 h22 top6 ml10">
+                    <input type="text" name="邮箱位置" id="" placeholder="请输入邮箱"  class="address">
+                    <span></span>
+                </div>
+                <div class="box-section-group-input mt30">
+                    <img src="img/login/login-phone.png" alt="手机号码" class="w22 h22 top6 ml10">
+                    <input type="text" name="手机号码" id="" placeholder="请输入手机号码" class="mobile">
+                    <span></span>
+                </div>
+            </div>
+            <div class="box-section-inform mt50">请在下面输入您的登录信息</div>
+            <!-- 登录信息 -->
+            <div class="box-section-group-all">
+                <div class="box-section-group-input mt10">
+                    <img src="img/login/login-user.png" alt="用户名" class="w22 h22 top6 ml10">
+                    <input type="text" name="用户名" id="" placeholder="登录用户名" class="username">
+                    <span></span>
+                </div>
+                <div class="box-section-group-input mt30">
+                    <img src="img/login/login-password.png" alt="密码" class="w22 h22 top6 ml10">
+                    <input type="password" name="登录密码" id="" placeholder="登录密码" class="pwd" >
+                    <span></span>
+                </div>
+                <div class="box-section-group-input mt30">
+                    <img src="img/login/login-password-again.png" alt="确认密码" class="w22 h22 top6 ml10">
+                    <input type="password" name="确认密码" id="" placeholder="确认密码" class="repwd" >
+                    <span></span>
+                </div>
+                <!-- 同意按钮 -->
+                <div class="box-section-btn mt10">
+                    <span class="box-section-btn-no-agree"></span>
+                    <span class="f12 c333">我同意</span>
+                    <span><a class="f12 c30" href="#">Terms of Service & Privacy Policy</a></span>
+                </div>
+            </div>
+            <!-- 注册按钮 -->
+            <div class="text-center clear">
+                <button class="text-center-btn">注册</button>
+            </div>
+        </section>
+        <!-- <footer class="box-footer"></footer> -->
+    </div>
+</body>
+
+</html>
+<script>
+    $(function () {
+        $(".box-section-head-a").click(function(e){
+            e.preventDefault()
+            location.href="daxuesheng.html"
+        })
+        var $input = $('.box-section-group-input>input')
+        console.log($input)
+        $input.bind({
+            'focus': function () {
+                $(this).parent().addClass('input-active-border')
+            },
+            'blur': function () {
+                $(this).parent().removeClass('input-active-border')
+                if($(this).val().trim() == ''){
+                    $(this).next().html($(this).prop('name') + '不能为空！')
+                    $(this).next().css('display','block')
+                }else{
+                    $(this).next().css('display','none')
+                }
+            }
+        })
+
+        var $agree = $('.box-section-btn-no-agree')
+        $agree.click(function () {
+            if ($agree.hasClass('box-section-btn-no-agree')) {
+                $agree.removeClass('box-section-btn-no-agree').addClass('box-section-btn-agree')
+            } else {
+                $agree.removeClass('box-section-btn-agree').addClass('box-section-btn-no-agree')
+            }
+            if ($agree.hasClass('box-section-btn-agree') ){
+            console.log(1)
+                $('.text-center-btn').addClass('btn-active')
+            } else {
+                console.log(0)
+                $('.text-center-btn').removeClass('btn-active')
+            }
+        })
+
+$('.text-center-btn').click(function(){
+var username=$('.username').val()
+var pwd=$('.pwd').val()
+var repwd=$('.repwd').val()
+var address=$('.address').val()
+var mobile=$('.mobile').val()
+console.log(0)
+$.ajax({
+    type:'get',
+    url:"http://127.0.0.1/register.php?username="+username+"&password="+pwd+"&confirm="+repwd+"&mobile="+mobile+"&address="+address,
+        success:function(datas){
+    var datas=JSON.parse(datas)
+    if(datas.code==0){
+        alert(datas.msg)
+        window.location.href="daxuesheng.html"
+    }else{
+        alert(datas.msg)
+if(datas.code==3){
+    alert(datas.msg)
+
+}
+    }
+}
+
+})
+
+})
+
+     
+    })
+</script>

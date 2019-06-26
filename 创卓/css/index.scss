@@ -1,0 +1,256 @@
+// 变量
+@mixin global {
+    width:100%;
+    height:100%;
+}
+@mixin  width22 {
+    width:0.22rem;
+    height:0.22rem;
+}
+@mixin  width24 {
+    width:0.24rem;
+    height:0.24rem;
+}
+@mixin  width30 {
+    width:0.30rem;
+    height:0.30rem;
+}
+$box:-webkit-box;
+html,body,.box{
+    @include global();
+}
+body{
+    background-color: #F9F9F9;
+}
+.content{
+    width: 100%;
+    height: 100%;
+    display: $box;
+    -webkit-box-orient: vertical;
+    header{
+        padding: 0 0.12rem;
+        position: relative;
+        box-sizing: border-box;
+        
+        width: 100%;
+        height: 0.5rem;
+        background: url(../img/index/bg.png);
+        text-align: center;
+
+        .login-left{
+            @include width30();
+            border-radius:50%;
+            background: #fff; 
+            position: absolute;
+            top: 0.12rem;
+            left: 0.12rem;
+            img{
+                @include width30();
+            }
+        }
+        .log>img{
+            width: 0.53rem;
+            height: 0.26rem;
+            position: relative;
+            top: 0.12rem;
+        }
+        .login-right{
+            position: absolute;
+            top: 0.12rem;
+            right: 0.1rem;
+            .login-right-span>img{
+                @include width24();  
+            }
+        }
+    }
+    section{
+        width: 100%;
+        position: relative;
+        -webkit-box-flex:1;
+        overflow: auto;
+        .section-bg{
+            width: 100%;
+            height: 1.3rem;
+            background: url(../img/index/bg.png);
+            background-size: 100%; 
+            position: absolute; 
+        } 
+        .section-school{
+            // width: 100%;
+            height: 3.5rem;
+            box-sizing: border-box;
+            background:url(../img/index/input-bg.png);
+            background-size: 100%;
+            padding: 0.12rem 0.18rem;
+            position: relative;
+            z-index: 10;
+            .school-input{
+                width: 90%;
+                line-height: 0.46rem;
+                border: 1px solid #E5E5E5;
+                margin:0.14rem auto;
+                position: relative;
+                input{
+                     border:none;
+                    outline: none;
+                    background: none;
+                    margin-left:0.42rem;
+                    padding-left:0.1rem;
+                    height:40%;
+                    border-left:1px solid #e5e5e5;
+                    color: #30D3AC;
+                }
+            }
+            .school-input-span-left{
+                position: absolute;
+                left: 0.12rem;
+                img{
+                    @include width22();
+                vertical-align:middle;
+                }
+            }
+            .school-input-span-right{
+                position: absolute;
+                right: 0.12rem;
+                color: #30D3AC;
+                font-size: 0.18rem;
+                font-weight: 700;
+                img{
+                    @include width24();
+                    vertical-align:middle;
+                }
+                
+            }
+            .school-input-fixed{
+                width: 100%;
+                min-height: 30%;
+                max-height: 50%;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                background: #fff;
+                z-index: 12;
+                ul{
+                    padding: 0 0.2rem;
+                    line-height: 0.24rem;
+                    li{
+                        margin: 0.1rem 0;
+                        .school-input-fixed-ul-li-text{
+                            font-size: 0.14rem;
+                            padding-left:0.3rem;
+                        }
+                        .school-input-fixed-ul-li-select{
+                            @include width22();
+                            padding-left:0.2rem;
+                            img{
+                                @include width22();
+                                vertical-align:middle;
+                                
+                                display: none;
+                            }
+                        }
+                         
+                    }
+
+                }
+            }
+        }
+        .section-activity{
+            // width: 100%;
+            box-sizing: border-box;
+            padding: 0.1rem 0;
+            margin: 0 0.12rem;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .section-activity-title{
+            font-size: 0.18rem;
+            font-weight: 700;
+            line-height: 0.25rem;
+            padding: 0 0 0.09rem 0.08rem;
+        }
+        .section-activity-concent{
+            font-size: 0.14rem;
+            padding: 0 0.08rem;
+        }
+        .section-activity-click{
+            // width: 100%;
+            background: #30D3AC;
+            color: #fff;
+            text-align: center;
+            line-height: 0.5rem;
+            border-radius:0.04rem;
+           margin-top:0.1rem;
+        }
+        .section-bibbon{
+            // width: 100%;
+            padding: 0 0.12rem;
+            background: #FAFAFA;
+            .section-bibbon-title{
+                width: 0.8rem;
+                line-height: 0.22rem;
+                text-align: center;
+                // background: url(../img/index/title1.png);
+                // background-size: 100%;
+                color: #fff;
+                padding: 0 0.05rem;    
+            }
+            .title-one{
+                background: url(../img/index/title1.png);
+                background-size: 100%;
+            }
+            .title-two{
+                width: 0.55rem;
+                background: url(../img/index/title5.png);
+                background-size: 100%;
+            }
+            .title-stree{
+                background: url(../img/index/title2.png);
+                background-size: 100%;
+            }
+            .title-frow{
+                background: url(../img/index/title3.png);
+                background-size: 100%;
+            }
+            .title-five{
+                background: url(../img/index/title4.png);
+                background-size: 100%;
+            }
+            .section-bibbon-title-paper{
+                text-align: center;
+                font-size: 0.14rem;
+                line-height: 0.4rem;
+                border-bottom: 1px dashed #30D3AC;
+            }
+            .section-bibbon-title-tag{
+                span{
+                    font-size: 0.14rem;
+                    display: inline-block;
+                    padding: 0 0.05rem;
+                    margin: 0.1rem 0.05rem;
+                    border-radius: 0.02rem;
+                    position: relative;
+                    left: 1rem;
+                    color: #fff;
+                }
+            }
+            
+        }
+        .section-more{
+                font-size: 0.1rem;
+                color: #30D3AC;
+                width: 0.8rem;
+                text-align: center;
+                padding-left:0.22rem; 
+                line-height: 0.24rem;
+                border-radius:0.12rem;
+                background: #FAFAFA; 
+                margin: 0 auto;
+                
+                img{
+                   width: 0.22rem;
+                   height: 0.22rem;
+                   vertical-align: middle;
+                }
+            }
+    }
+}

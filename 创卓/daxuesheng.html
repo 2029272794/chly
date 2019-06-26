@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/land.css">
+    <script src="js/jquery-min-3.4.1.js"></script>
+    <script src="js/land.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <header>
+            <a href="register.html"><button class="btn-zc">注册</button></a>
+            <div class="log"><img src="img/log (1).png" alt=""></div>
+            <div class="tubiao"><img src="img/huanyin.png" alt=""></div>
+        </header>
+        <section>
+            <ul class="section-ul">
+                <li class="section-ul-li mt20"><img src="img/yonghuming.png" alt=""> <input type="text" value=""
+                        placeholder="请输入用户名" class="username"><br>
+                </li>
+                <li class="section-ul-li mt20"> <img src="img/mima.png" alt=""> <input type="password" value=""
+                        placeholder="请输入密码" class="password"><br></li>
+                <li class="section-ul-li-w fr">忘记密码？</li>
+                <li><button class="btn-dl">登录</button></li>
+
+            </ul>
+        </section>
+        <footer>
+            <div class="foot-bt">友情链接</div>
+            <ul class="foot-ul clear">
+                <li class="foot-ul-li fl"><a href="#"><img src="img/lian1.png" alt=""></a></li>
+                <li class="foot-ul-li fl"><a href="#"><img src="img/lian2.png" alt=""></a></li>
+                <li class="foot-ul-li fl"><a href="#"><img src="img/lian3.png" alt=""></a></li>
+                <li class="foot-ul-li fl"><a href="#"><img src="img/lian4.png" alt=""></a></li>
+            </ul>
+        </footer>
+    </div>
+    <script>
+        $(function () {
+           
+            $(".btn-dl").click(function(){
+                 var username = $('.username').val()
+            var psd = $('.password').val()
+                $.ajax({
+                    type: 'get',
+                    url: "http://192.168.43.94/login.php?username=" + username + "&password=" + psd,
+                    success: function (data) {
+                        // console.log(JSON.parse(data))
+                        var datas = JSON.parse(data)
+                        if (datas.code == 0) {
+                            alert(datas.msg)
+                            location.href="index.html"
+                        } else {
+                            alert(datas.msg)
+                        }
+                    }
+                })
+            })
+        })
+
+    </script>
+</body>
+
+</html>
